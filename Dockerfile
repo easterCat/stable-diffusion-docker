@@ -14,4 +14,6 @@ RUN python -v \
     # && tar xf ./models/Stable-diffusion/animefull-latest.tar 
     && aria2c --summary-interval=10 -d ./models/Stable-diffusion/ -x 3 --allow-overwrite=true https://huggingface.co/hakurei/waifu-diffusion-v1-4/resolve/main/vae/kl-f8-anime.ckpt
 
-CMD [ "python", "./sd/stable-diffusion-webui/launch.py", "--skip-torch-cuda-test" ]
+WORKDIR /usr/src/sd/stable-diffusion-webui
+
+CMD [ "python", "./launch.py", "--skip-torch-cuda-test" ]
