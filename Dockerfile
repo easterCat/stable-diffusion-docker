@@ -16,16 +16,16 @@ RUN python -v \
 
 WORKDIR /usr/src/sd/stable-diffusion-webui
 
-RUN mkdir repositories \
-    && git clone https://github.com/CompVis/stable-diffusion.git repositories/stable-diffusion \
-    && git clone https://github.com/CompVis/taming-transformers.git repositories/taming-transformers \ 
-    && git clone https://github.com/sczhou/CodeFormer.git repositories/CodeFormer \ 
-    && git clone https://github.com/salesforce/BLIP.git repositories/BLIP \ 
-    && pip install transformers==4.19.2 diffusers invisible-watermark --prefer-binary \
-    && pip install git+https://github.com/crowsonkb/k-diffusion.git --prefer-binary \
-    && pip install gfpgan \
-    && pip install -r repositories/CodeFormer/requirements.txt --prefer-binary \
-    && pip install -r requirements.txt --prefer-binary \
-    && pip install -U numpy --prefer-binary
+# RUN mkdir repositories \
+#     && git clone https://github.com/CompVis/stable-diffusion.git repositories/stable-diffusion \
+#     && git clone https://github.com/CompVis/taming-transformers.git repositories/taming-transformers \ 
+#     && git clone https://github.com/sczhou/CodeFormer.git repositories/CodeFormer \ 
+#     && git clone https://github.com/salesforce/BLIP.git repositories/BLIP \ 
+#     && pip install transformers==4.19.2 diffusers invisible-watermark --prefer-binary \
+#     && pip install git+https://github.com/crowsonkb/k-diffusion.git --prefer-binary \
+#     && pip install gfpgan \
+#     && pip install -r repositories/CodeFormer/requirements.txt --prefer-binary \
+#     && pip install -r requirements.txt --prefer-binary \
+#     && pip install -U numpy --prefer-binary
 
-CMD [ "python", "./launch.py", "--skip-torch-cuda-test","--share","--listen" ]
+CMD [ "python", "./launch.py", "--skip-torch-cuda-test","--listen" ]
