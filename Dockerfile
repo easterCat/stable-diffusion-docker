@@ -12,6 +12,9 @@ RUN python -v \
     && DEBIAN_FRONTEND=noninteractive apt-get install ffmpeg libsm6 libxext6 -y \
     # && aria2c --summary-interval=10 -d ./models/Stable-diffusion/ -x 3 --allow-overwrite=true https://pub-2fdef7a2969f43289c42ac5ae3412fd4.r2.dev/animefull-latest.tar \
     # && tar xf ./models/Stable-diffusion/animefull-latest.tar 
+    # && aria2c --summary-interval=5 -x 3 --allow-overwrite=true -Z https://pub-2fdef7a2969f43289c42ac5ae3412fd4.r2.dev/naifu.tar \
+    # && aria2c --summary-interval=5 -x 3 --allow-overwrite=true -Z https://pub-2fdef7a2969f43289c42ac5ae3412fd4.r2.dev/animefull-latest.tar \
+    # && tar xf ./models/Stable-diffusion/naifu.tar \
     && aria2c --summary-interval=10 -d ./models/Stable-diffusion/ -x 3 --allow-overwrite=true https://huggingface.co/hakurei/waifu-diffusion-v1-4/resolve/main/vae/kl-f8-anime.ckpt
 
 WORKDIR /usr/src/sd/stable-diffusion-webui
