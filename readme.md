@@ -15,7 +15,7 @@ python ./launch.py --skip-torch-cuda-test --listen
 ## 没有显卡启动
 
 ```shell
-python ./launch.py --precision full --no-half --skip-torch-cuda-test --listen
+python ./launch.py --precision full --no-half --use-cpu all --skip-torch-cuda-test --listen
 ```
 
 ### 一些model库安装 嗯
